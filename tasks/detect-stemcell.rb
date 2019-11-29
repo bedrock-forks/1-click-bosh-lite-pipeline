@@ -8,6 +8,11 @@ versions = ops_file
            .select { |op| op['path'] =~ %r(/releases/name=.+/stemcell) }
            .map { |op| op['value']['version'] }
 
+if versions.uniq.size <1
+  versions = ops_file.select { |op| op['path'] =~ %r(/releases/name=.+) }
+      .map { |op| op['value']['stemcell']['version'] }
+end
+
 unique_versions_count = versions.uniq.size
 
 if unique_versions_count == 0
