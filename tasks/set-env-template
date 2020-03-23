@@ -3,7 +3,7 @@
 # set -x
 BOSHLITE_HOSTNAME=$BOSH_LITE_NAME.$DOMAIN_NAME
 
-export BOSH_LITE_STATE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+export BOSH_LITE_STATE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]:-${(%):-%x}}" )" >/dev/null 2>&1 && pwd )"
 
 
 function exit_with_error_message() {
