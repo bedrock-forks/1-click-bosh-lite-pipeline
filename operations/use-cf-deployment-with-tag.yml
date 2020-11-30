@@ -1,6 +1,6 @@
 - type: replace
   path: /resources/name=cf-deployment/source/branch?
-  value: master
+  value: main
 
 - type: replace
   path: /resources/name=cf-deployment/source/tag_filter?
