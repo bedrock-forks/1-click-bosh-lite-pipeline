@@ -9,6 +9,7 @@ resources:
   source:
     uri: ((state_git_repo))
     branch: master
+    rebase: true
     private_key: ((github-private-key))
     disable_ci_skip: true
 
